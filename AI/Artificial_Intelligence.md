@@ -47,7 +47,7 @@ However, the world isn't black or white, reality isn't that precise
 
 ------
 
-![Membership Functions Representation](memebrship-functions.PNG)
+![Membership Functions Representation](membership-functions.PNG)
 
 ![Membership Functions Representation](membership-functions-2.PNG)
 
