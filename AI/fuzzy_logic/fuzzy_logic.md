@@ -1,5 +1,9 @@
 # Fuzzy Logic
 
+------
+
+[TOC]
+
 Fuzzy logic is a type of logic that recognizes more than simple true or false values.
 
 With fuzzy logic propositions can be represented with degrees of truthfulness or falsehood.
