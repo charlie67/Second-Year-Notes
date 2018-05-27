@@ -83,7 +83,50 @@ Building maps can be useful
 #### Simultaneous Localisation and Mapping (SLAM)
 
 * Exploits vector-based maps and the possibility of representing uncertainty in the position of thing
-* Chicken and egg problem: building a map and finding where we are in the map at the same time Uses a “filter” to keep track of the state of the system and improve it based on observations
+* Chicken and egg problem: building a map and finding where we are in the map at the same time 
+* Uses a “filter” to keep track of the state of the system and improve it based on observations
+  * "Filter" like kalman filter 
   * state: pose of the robot and of landmarks
   * observations: seeing landmarks
+
+#####The Process
+
+* Update robot pose from odometry or accelerometers and gyroscopes
+* Extract landmarks
+* Find them in the map
+* Correct pose from known landmarks
+* Add unknown landmarks to the map
+* You start from your guess of where you are and then 
+
+
+
+##### Landmarks
+
+* Need to be extracted from the environment using our sensors
+* Need to find where they are relative to the robot
+* Need to be able to recognise previously seen ones
+* Need to be static
+* Often done using Lidars and/or vision, detecting things like corners
+
+#####Updating the State
+* Many methods (Kalman filter, Extended Kalman Filter (EKF), Particle filter, etc.)
+* State contains:
+  * the pose of the robot and known landmarks
+  * uncertainty on the pose
+  * often a Gaussian
+* State updated based on current poses, uncertainties and observed poses and their uncertainties
+  * e.g. re-observation of a know highly certain landmark would improve the certainty of the robot’s pose
+  * e.g. low certainty on current robot pose would result in low certainty on the pose of new landmarks
+
+####Topological Maps
+
+* Map is a graph
+* Vertices/nodes are places
+* Edges are links between places
+* Nodes and edges can be characterised by various bits of information
+* Inherently qualitative (often no metric information)
+* Inherently more robust than metric maps (such as vector-based or occupancy grids)
+* Still need information to localise and navigate
+
+#### Kuipers and Byuns Mapping Strategy
 
