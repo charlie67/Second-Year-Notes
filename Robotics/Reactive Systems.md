@@ -49,3 +49,20 @@
 * These interactions cannot be predicted, and so can produce unexpected emergent behaviour
 
 ##Subsumption Architecture
+
+* Robustness often hardwired in and hence hard to implement 
+* ● Usually custom behaviour design – takes time and has a big learning curve
+
+
+
+### Strengths
+
+* Hardware retargetability - can be compiled down onto programmable-array logic circuitry 
+* Support for parallelism – each behaviour can run independently and asynchronously 
+* Niche targetability – custom behaviours can be created for specific task-environment pairs
+
+### Weaknesses
+
+* Lack of run-time flexibility – limits to the way the system can be adapted during execution 
+* Upper layers cannot be designed completely independently from lower but does support behaviour re-use 
+* Little support for modularity
